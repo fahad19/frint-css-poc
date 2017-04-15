@@ -4,13 +4,13 @@
 
 ## Goals
 
-Base:
+### Base:
 
 * Theme values stored as YAML files
 * A functional component-based CSS Framework, using Theme
 * A UI-Kit of React components, using themed CSS Framework
 
-Frint Apps:
+### Frint Apps:
 
 * A root app with Frint using UI-Kit components, AND custom CSS
 * Multiple widgets using UI-Kit components, AND custom CSS
