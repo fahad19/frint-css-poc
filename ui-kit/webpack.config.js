@@ -14,19 +14,9 @@ var plugins = !minify
     })
   ];
 
-// map 'lodash/*' requires to 'lodash.*' instead
-// for reduced bundle size
-// plugins.push(new webpack.NormalModuleReplacementPlugin(
-//   /^lodash\/(.*)/,
-//   function (resource) {
-//     console.log(resource.request);
-//     // resource.request = resource.request.replace('/', '.');
-//   }
-// ));
-
 var filename = !minify
-  ? 'frint-react-styles.js'
-  : 'frint-react-styles.min.js';
+  ? 'ui-kit.js'
+  : 'ui-kit.min.js';
 
 module.exports = {
   entry: __dirname + '/src',
@@ -34,7 +24,7 @@ module.exports = {
     path: __dirname + '/../build',
     filename: filename,
     libraryTarget: 'this',
-    library: 'FrintReactStyles'
+    library: 'UIKit'
   },
   externals: config.externals,
   target: 'web',
@@ -50,6 +40,10 @@ module.exports = {
             'travix'
           ]
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
       }
     ]
   }

@@ -1,0 +1,8 @@
+@value variables: "css-framework/variables.css";
+@value primary-color, secondary-color from variables;
+
+.button {
+  background: primary-color;
+  border: 2px solid secondary-color;
+  color: #fff;
+}

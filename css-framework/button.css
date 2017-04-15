@@ -1,6 +1,0 @@
-@value variables: "./variables.css";
-@value primary-color, secondary-color from variables;
-
-.button {
-  background: primary-color;
-}
