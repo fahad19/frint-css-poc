@@ -31,13 +31,13 @@ Shipping CSS statically without requiring JS on first serve to the browser:
 To build all and then serve:
 
 ```
-$ make serve --theme="blue"
+$ make serve --THEME_NAME="blue"
 ```
 
 Build individually:
 
 ```
-$ make build-css-framework --theme="blue"
+$ make build-css-framework --THEME_NAME="blue"
 $ make build-root-app
 $ make build-child-app
 $ make serve-only
