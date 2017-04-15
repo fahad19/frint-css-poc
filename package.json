@@ -1,0 +1,27 @@
+{
+  "name": "frint-css-poc",
+  "version": "1.0.0",
+  "description": "> PoC for CSS-in-JS with Frint",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fahad19/frint-css-poc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fahad19/frint-css-poc/issues"
+  },
+  "homepage": "https://github.com/fahad19/frint-css-poc#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-travix": "^1.1.1",
+    "js-yaml": "^3.8.3",
+    "webpack": "^2.4.1"
+  }
+}

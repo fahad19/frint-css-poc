@@ -1,6 +1,6 @@
 # frint-css-poc
 
-> PoC for CSS in JS with Frint
+> PoC for CSS-in-JS with Frint
 
 ## Goals
 
