@@ -1,0 +1,3 @@
+.childName {
+  composes: bold from "css-framework/typography.css";
+}
