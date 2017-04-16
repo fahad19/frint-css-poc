@@ -10,7 +10,18 @@ bundle-css-framework:
 bundle-ui-kit:
 	./node_modules/.bin/webpack --config ./ui-kit/webpack.config.js
 
+bundle-app-root:
+	./node_modules/.bin/webpack --config ./app-root/webpack.config.js
+
 bundle:
 	make bundle-css-framework
 	make bundle-frint-react-styles
 	make bundle-ui-kit
+	make bundle-app-root
+
+serve-only:
+	(cd ./build && ../node_modules/.bin/live-server)
+
+serve:
+	make bundle
+	make serve-only

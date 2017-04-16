@@ -5,6 +5,8 @@ module.exports = {
       'lodash': '_',
       'frint-react-styles': 'FrintReactStyles',
       'css-framework': 'CssFramework',
+      'frint': 'Frint',
+      'frint-react': 'FrintReact',
 
       // ui-kit:
       // map 'css-framework/*' requires to 'CssFramework.*'
@@ -24,6 +26,16 @@ module.exports = {
       callback();
     },
 
+    // css-framework:
+    // map 'css-framework/*' requires to 'CssFramework.*'
+    function(context, request, callback) {
+      if (/^css\-framework\/(.*)/.test(request)) {
+        var funcName = request.split('/')[1];
+        console.log(request, funcName);
+        return callback(null, 'root ' + 'CssFramework.' + funcName);
+      }
 
+      callback();
+    },
   ]
 };
