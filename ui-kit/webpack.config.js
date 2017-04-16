@@ -29,6 +29,10 @@ module.exports = {
   externals: config.externals,
   target: 'web',
   plugins: plugins,
+  // https://github.com/webpack-contrib/css-loader/issues/454
+  node: {
+    Buffer: false,
+  },
   module: {
     rules: [
       {
