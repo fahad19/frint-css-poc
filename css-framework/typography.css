@@ -1,5 +1,10 @@
+@value variables: "./variables.css";
+@value primary-color, secondary-color from variables;
+
 .bold {
   font-weight: bold;
+  text-decoration: underline;
+  color: primary-color;
 }
 
 .italic {
