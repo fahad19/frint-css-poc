@@ -23,6 +23,7 @@
     "babel-loader": "^6.4.1",
     "babel-preset-travix": "^1.1.1",
     "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
     "js-yaml": "^3.8.3",
     "live-server": "^1.2.0",
     "lodash": "^4.17.4",

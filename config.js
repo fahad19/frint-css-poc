@@ -5,6 +5,7 @@ module.exports = {
       'lodash': '_',
       'frint-react-styles': 'FrintReactStyles',
       'css-framework': 'CssFramework',
+      'ui-kit': 'UIKit',
       'frint': 'Frint',
       'frint-react': 'FrintReact',
 

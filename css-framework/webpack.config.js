@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = require('../config');
 
@@ -13,6 +14,8 @@ var plugins = !minify
       }
     })
   ];
+
+plugins.push(new ExtractTextPlugin('css-framework.css'));
 
 var filename = !minify
   ? 'css-framework.js'
@@ -62,17 +65,8 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            // options: {
-            //   plugins: function () {
-            //     return [
-            //       require('precss'),
-            //       require('autoprefixer'),
-            //     ];
-            //   }
-            // }
           }
-        ]
-      }
+        ]      }
     ]
   }
 };
