@@ -9,10 +9,12 @@ export default React.createClass({
         <p>I am Root App!</p>
 
         <p>
-          Button in root:
+          Button from ui-kit in root:
 
           <Button text="Root" />
         </p>
+
+        <p>Region below:</p>
 
         <Region name="sidebar" />
       </div>
