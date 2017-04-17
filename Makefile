@@ -1,5 +1,12 @@
 THEME_NAME := "blue"
 
+install-css-loader:
+	cp css-loader/lib/loader.js node_modules/css-loader/lib/loader.js
+
+install:
+	npm install
+	make install-css-loader
+
 bundle-frint-react-styles:
 	./node_modules/.bin/webpack --config ./frint-react-styles/webpack.config.js
 

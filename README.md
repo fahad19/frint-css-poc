@@ -4,6 +4,17 @@
 
 ## Goals
 
+* Themes with configuration values
+* A functional component-based CSS Framework
+* UI-Kit utilizing themed CSS Framework
+* Frint Apps using CSS Framework and UI-Kit
+
+And most importantly:
+
+* Changes in Themes/CSS-Framework/UI-Kit should not require rebundling Frint Apps
+
+## Structure
+
 ### Base:
 
 * [themes](./themes): Theme values stored as YAML files
@@ -31,14 +42,6 @@ Shipping CSS statically without requiring JS on first serve to the browser:
 To build all and then serve:
 
 ```
+$ make install
 $ make serve --THEME_NAME="blue"
-```
-
-Build individually:
-
-```
-$ make build-css-framework --THEME_NAME="blue"
-$ make build-root-app
-$ make build-child-app
-$ make serve-only
 ```
