@@ -1,3 +1,7 @@
+@value variables: "css-framework/variables.css";
+@value primary-color, secondary-color from variables;
+
 .childName {
   composes: bold from "css-framework/typography.css";
+  color: primary-color;
 }
