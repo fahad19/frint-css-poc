@@ -5,7 +5,7 @@
 ## Goals
 
 * Themes with configuration values
-* A functional component-based CSS Framework
+* A functional CSS Framework
 * UI-Kit utilizing themed CSS Framework
 * Frint Apps using CSS Framework and UI-Kit
 
@@ -18,7 +18,7 @@ And most importantly:
 ### Base:
 
 * [themes](./themes): Theme values stored as YAML files.
-* [css-framework](./css-framework): A functional component-based CSS Framework.
+* [css-framework](./css-framework): A functional CSS Framework.
   * Uses Theme
 * [ui-kit](./ui-kit): A UI-Kit of React components.
   * Uses themed CSS Framework
