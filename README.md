@@ -43,7 +43,12 @@ Custom CSS in Apps should be able to use theme variables.
 Shipping CSS statically without requiring JS on first serve to the browser:
 
 * [ ] Server-side rendering
-* [ ] Extract CSS for Root Apps
+* [ ] Extract CSS for serving statically:
+  * [ ] `css-framework.css` (along with `css-framework.js`)
+  * [ ] `ui-kit.css` (along with `ui-kit.js`)
+  * [ ] `app-root.css` (along with `app-root.js`)
+
+Until we get to a point where we want to do SSR for dynamic apps, just JS bundles for them would suffice (`app-child.js`). No CSS extraction needed for them.
 
 ## Usage
 
