@@ -15,11 +15,11 @@ var plugins = !minify
     })
   ];
 
-plugins.push(new ExtractTextPlugin('css-framework.css'));
-
 var filename = !minify
   ? 'css-framework.js'
   : 'css-framework.min.js';
+
+plugins.push(new ExtractTextPlugin(filename.replace('.js', '.css')));
 
 module.exports = {
   entry: __dirname,
@@ -52,21 +52,38 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         // loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              externals: config.externals,
-            }
-          },
-          {
-            loader: 'postcss-loader',
-          }
-        ]      }
+        // use: [
+        //   'style-loader',
+        //   {
+        //     loader: 'css-loader',
+        //     options: {
+        //       modules: true,
+        //       importLoaders: 1,
+        //       localIdentName: '[name]__[local]___[hash:base64:5]',
+        //       externals: config.externals,
+        //     }
+        //   },
+        //   {
+        //     loader: 'postcss-loader',
+        //   }
+        // ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            // 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                externals: config.externals,
+              }
+            },
+            'postcss-loader',
+          ],
+        }),
+      }
     ]
   }
 };

@@ -1,4 +1,8 @@
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+// needed for ExtractTextPlugin (for generating externals-dependent static .css files)
+global.CssFramework = require('../build/css-framework').CssFramework;
 
 var config = require('../config');
 
@@ -17,6 +21,8 @@ var plugins = !minify
 var filename = !minify
   ? 'ui-kit.js'
   : 'ui-kit.min.js';
+
+plugins.push(new ExtractTextPlugin(filename.replace('.js', '.css')));
 
 module.exports = {
   entry: __dirname + '/src',
@@ -49,29 +55,37 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         // loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              externals: config.externals,
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            // options: {
-            //   plugins: function () {
-            //     return [
-            //       require('precss'),
-            //       require('autoprefixer'),
-            //     ];
-            //   }
-            // }
-          }
-        ]
+
+        // use: [
+        //   'style-loader',
+        //   {
+        //     loader: 'css-loader',
+        //     options: {
+        //       modules: true,
+        //       importLoaders: 1,
+        //       localIdentName: '[name]__[local]___[hash:base64:5]',
+        //       externals: config.externals,
+        //     }
+        //   },
+        //   'postcss-loader',
+        // ],
+
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            // 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                externals: config.externals,
+              }
+            },
+            'postcss-loader',
+          ],
+        }),
       }
     ]
   }

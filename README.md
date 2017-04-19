@@ -7,7 +7,7 @@
 * Themes with configuration values
 * A functional CSS Framework
 * UI-Kit utilizing themed CSS Framework
-* Frint Apps using CSS Framework and UI-Kit
+* [Frint](https://frint.js.org) Apps using CSS Framework and UI-Kit
 
 And most importantly:
 
@@ -20,8 +20,10 @@ And most importantly:
 * [themes](./themes): Theme values stored as YAML files.
 * [css-framework](./css-framework): A functional CSS Framework.
   * Uses Theme
+  * Exports these bundles: `build/css-framework.js` and `build/css-framework.css`
 * [ui-kit](./ui-kit): A UI-Kit of React components.
   * Uses themed CSS Framework
+  * Exports these bundles: `build/ui-kit.js` and `build/ui-kit.css`
 
 And,
 
@@ -38,18 +40,6 @@ And,
 
 Custom CSS in Apps should be able to use theme variables.
 
-## Future goals
-
-Shipping CSS statically without requiring JS on first serve to the browser:
-
-* [ ] Server-side rendering
-* [ ] Extract CSS for serving statically:
-  * [ ] `css-framework.css` (along with `css-framework.js`)
-  * [ ] `ui-kit.css` (along with `ui-kit.js`)
-  * [ ] `app-root.css` (along with `app-root.js`)
-
-Until we get to a point where we want to do SSR for dynamic apps, just JS bundles for them would suffice (`app-child.js`). No CSS extraction needed for them.
-
 ## Usage
 
 To build all and then serve:
@@ -57,4 +47,11 @@ To build all and then serve:
 ```
 $ make install
 $ make serve --THEME_NAME="blue"
+```
+
+On a separate Terminal window, the `css-framework` and `ui-kit` can be rebundled with a different theme. And the styles will be applied in Frint Apps dynamically:
+
+```
+$ make bundle-css-framework THEME_NAME="green"
+$ make bundle-ui-kit THEME_NAME="green"
 ```
