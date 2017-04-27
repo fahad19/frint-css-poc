@@ -1,19 +1,18 @@
 import React from 'react';
 import { Region } from 'frint-react';
-import { stylize } from 'frint-react-styles';
 import { Button } from 'ui-kit';
 
 import ChildText from './ChildText';
-import styles from '../styles/root.css';
+import { childName } from '../styles/root.css';
 
-const Root = React.createClass({
+export default React.createClass({
   render() {
     return (
       <div>
         <hr />
 
         <p>
-          I am the <span styleName="childName">Child</span>, colouring myself with theme's variable!
+          I am the <span className={childName}>Child</span>, colouring myself with theme's variable!
         </p>
 
         <p>
@@ -27,5 +26,3 @@ const Root = React.createClass({
     );
   }
 });
-
-export default stylize(styles)(Root);

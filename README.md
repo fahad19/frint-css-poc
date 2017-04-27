@@ -28,7 +28,6 @@ And most importantly:
 And,
 
 * [css-loader](./css-loader): Modified webpack loader for suiting our needs. PR is [here](https://github.com/webpack-contrib/css-loader/pull/496).
-* [frint-react-styles](./frint-react-styles): New Frint package exposing `stylize` HoC for use in Apps using styles.
 * [build](./build): Static builds.
 
 ### Frint Apps:

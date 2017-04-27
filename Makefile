@@ -7,9 +7,6 @@ install:
 	npm install
 	make install-css-loader
 
-bundle-frint-react-styles:
-	./node_modules/.bin/webpack --config ./frint-react-styles/webpack.config.js
-
 bundle-css-framework:
 	THEME_NAME=$(THEME_NAME) node ./css-framework/bin/apply-theme-variables.js
 	./node_modules/.bin/webpack --config ./css-framework/webpack.config.js
@@ -25,7 +22,6 @@ bundle-app-child:
 
 bundle:
 	make bundle-css-framework
-	make bundle-frint-react-styles
 	make bundle-ui-kit
 	make bundle-app-root
 	make bundle-app-child

@@ -1,18 +1,15 @@
 import React from 'react';
-import { stylize } from 'frint-react-styles';
 
-import styles from './styles.css';
+import { button } from './styles.css';
 
-const Button = React.createClass({
+export default React.createClass({
   displayName: 'Button',
 
   render() {
     return (
-      <button styleName="button">
+      <button className={button}>
         {this.props.text}
       </button>
     );
   }
 });
-
-export default stylize(styles)(Button);
