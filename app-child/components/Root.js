@@ -3,6 +3,7 @@ import { Region } from 'frint-react';
 import { stylize } from 'frint-react-styles';
 import { Button } from 'ui-kit';
 
+import ChildText from './ChildText';
 import styles from '../styles/root.css';
 
 const Root = React.createClass({
@@ -20,6 +21,8 @@ const Root = React.createClass({
 
           <Button text="Hello" />
         </p>
+
+        <ChildText text="Just custom text." />
       </div>
     );
   }

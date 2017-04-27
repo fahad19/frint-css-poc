@@ -1,0 +1,8 @@
+@value variables: "css-framework/variables.css";
+@value primary-color, secondary-color from variables;
+
+.someCssClass {
+  composes: bold from "css-framework/typography.css";
+  color: primary-color;
+  text-decoration: underline;
+}
