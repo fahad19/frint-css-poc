@@ -13,6 +13,7 @@ module.exports = {
       // map 'css-framework/*' requires to 'CssFramework.*'
       'css-framework/variables.css': 'CssFramework.variables',
       'css-framework/typography.css': 'CssFramework.typography',
+      'css-framework/breakpoints.css': 'CssFramework.breakpoints',
     },
 
     // Lodash:

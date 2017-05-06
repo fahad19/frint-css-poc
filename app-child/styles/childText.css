@@ -1,8 +1,16 @@
 @value variables: "css-framework/variables.css";
 @value primary-color, secondary-color from variables;
+@value large from "css-framework/breakpoints.css";
 
 .someCssClass {
   composes: bold from "css-framework/typography.css";
   color: primary-color;
   text-decoration: underline;
+  font-size: 16px;
+}
+
+@media large {
+  .someCssClass {
+    font-size: 24px;
+  }
 }
